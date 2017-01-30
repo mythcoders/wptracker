@@ -1,0 +1,49 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WPTracker.DataChanges"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    xmlns:telerikCore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <TextBlock Text="WPTRACKER" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Text="suggest data changes" Style="{StaticResource PhoneTextExtraLargeStyle}"
+                    LineHeight="0" TextWrapping="Wrap" FontFamily="Segoe WP Light" FontSize="48"/>
+
+        <Grid x:Name="ContentPanel" Grid.Row="2">
+            <ScrollViewer>
+                <StackPanel>
+                    <TextBlock Margin="12" Style="{StaticResource PhoneTextNormalStyle}" Text="Noticed incorrect data? Sometimes we make mistakes. Simply tell us what was wrong below, and we will investigate it. If we did make mistake, we will update the database." TextWrapping="Wrap"/>
+                    <telerikInput:RadListPicker AllowDrop="False" Header="table" IsExpanded="False" x:Name="tablePicker" VerticalAlignment="Top" />
+                    <TextBlock Margin="12 0" Text="Field" x:Name="fieldTB"/>
+                    <TextBox InputScope="Text"/>
+                    <TextBlock Margin="12 0" Text="Old Value" x:Name="oldValueTB"/>
+                    <TextBox InputScope="Text"/>
+                    <TextBlock Margin="12 0" Text="New Value" x:Name="newValueTB"/>
+                    <TextBox InputScope="Text"/>
+                    <Button Content="suggest change" HorizontalAlignment="Left" Name="sendChanges" Click="sendChanges_Click" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

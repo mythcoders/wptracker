@@ -1,0 +1,90 @@
+﻿<phone:PhoneApplicationPage     
+    x:Class="WPTracker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikCore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"     
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"       
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    >
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="WPTRACKER" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" x:Name="ContentPanel" ShowGridLines="False">
+            <ScrollViewer>
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- All Devices -->
+                    <telerikPrimitives:RadCustomHubTile Grid.Row="0" Grid.ColumnSpan="2" x:Name="allDevicesTile" Title="All Devices"
+                                                  Height="223" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                                  Tap="allDevicesTile_Tap">
+                        <telerikPrimitives:RadCustomHubTile.FrontContent>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource PhoneAccentBrush}">
+                                <Image Source="/Images/Hubs/all.png" Margin="50" />
+                            </Grid>
+                        </telerikPrimitives:RadCustomHubTile.FrontContent>
+                    </telerikPrimitives:RadCustomHubTile>
+                    <!-- OS Version -->
+                    <telerikPrimitives:RadCustomHubTile Grid.Row="1" Grid.ColumnSpan="2" x:Name="osVersionsTile" Title="Windows Phone OS Change Logs"
+                                                  Height="220" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                                                  Tap="osVersionsTile_Tap">
+                        <telerikPrimitives:RadCustomHubTile.FrontContent>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource PhoneAccentBrush}">
+                                <Image Source="/Images/Hubs/updates.png" Margin="50" />
+                            </Grid>
+                        </telerikPrimitives:RadCustomHubTile.FrontContent>
+                    </telerikPrimitives:RadCustomHubTile>
+
+                    <!-- Carriers -->
+                    <telerikPrimitives:RadCustomHubTile Grid.Row="2" x:Name="carrierTile" Title="Carriers and Regions"
+                                                  Height="220" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                                                  Tap="carrierTile_Tap">
+                        <telerikPrimitives:RadCustomHubTile.FrontContent>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource PhoneAccentBrush}">
+                                <Image Source="/Images/Hubs/carriers.png" Margin="50" />
+                            </Grid>
+                        </telerikPrimitives:RadCustomHubTile.FrontContent>
+                    </telerikPrimitives:RadCustomHubTile>
+
+                    <!-- Settings -->
+                    <telerikPrimitives:RadCustomHubTile Grid.Row="2" Grid.Column="1" x:Name="settingsTile" Title="Settings"
+                                                  Height="220" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                                                  Tap="settingsTile_Tap">
+                        <telerikPrimitives:RadCustomHubTile.FrontContent>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource PhoneAccentBrush}">
+                                <Image Source="/Images/Hubs/settings.png" Margin="50" />
+                            </Grid>
+                        </telerikPrimitives:RadCustomHubTile.FrontContent>
+                    </telerikPrimitives:RadCustomHubTile>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

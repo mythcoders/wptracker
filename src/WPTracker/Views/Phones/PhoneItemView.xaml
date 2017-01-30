@@ -1,0 +1,177 @@
+﻿<phone:PhoneApplicationPage xmlns:Controls="clr-namespace:WPTracker.Controls" 
+    x:Class="WPTracker.ViewModels.Phones.PhoneItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikSlideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <TextBlock Text="WPTRACKER" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Height="80">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="{Binding Model}" Style="{StaticResource PhoneTextExtraLargeStyle}"
+                       LineHeight="0" TextWrapping="Wrap" FontFamily="Segoe WP Light" Margin="12 0" FontSize="48"/>
+            <Controls:ManufacturerIconControl Grid.Column="1" Manufacturer="{Binding Make}" />
+        </Grid>
+
+        <ScrollViewer Grid.Row="2">
+            <StackPanel x:Name="ContentPanel" Margin="0 0 0 40">
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Phone Image" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                
+                <Grid Height="300">
+                    <TextBlock x:Name="PhoneImageText" Text="Loading..." TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Foreground="{StaticResource PhoneSubtleBrush}"/>
+                    <telerikPrimitives:RadSlideView x:Name="imageView" ItemsSource="{Binding}">
+                        <telerikPrimitives:RadSlideView.ItemTemplate>
+                            <DataTemplate>
+                                <telerikSlideView:PanAndZoomImage Source="{Binding Address}" Height="300" Stretch="Uniform"/>
+                            </DataTemplate>
+                        </telerikPrimitives:RadSlideView.ItemTemplate>
+                    </telerikPrimitives:RadSlideView>
+                </Grid>
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Phone Details" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Release Date" Value="{Binding Date}" Icon="/Images/Icons/releasedate.png" />
+                <Controls:PhoneSpecControl Field="Device Generation" Value="{Binding DeviceGeneration}" Icon="/Images/Icons/devicegeneration.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Operating System" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Release OS" Value="{Binding MinOS}" Icon="/Images/Icons/os.png" />
+                <Controls:PhoneSpecControl Field="Maximum OS" Value="{Binding MaxOS}" Icon="/Images/Icons/os.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="General Specifications" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Memory" Value="{Binding RAM}" Icon="/Images/Icons/memory.png" />
+                <Controls:PhoneSpecControl Field="Storage" Value="{Binding Storage}" Icon="/Images/Icons/storage.png" />
+                <Controls:PhoneSpecControl Field="Dimensions" Value="{Binding Dimensions}" Icon="/Images/Icons/dimensions.png" />
+                <Controls:PhoneSpecControl Field="Weight" Value="{Binding Weight}" Icon="/Images/Icons/weight.png" />
+                <Controls:PhoneSpecControl Field="Sensors" Value="{Binding Sensors}" Icon="/Images/Icons/sensors.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Processor" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Processor Speed" Value="{Binding ProcessorSpeed}" Icon="/Images/Icons/processor.png" />
+                <Controls:PhoneSpecControl Field="Processor Name" Value="{Binding ProcessorName}" Icon="/Images/Icons/processor.png" />
+                <Controls:PhoneSpecControl Field="Processor Type" Value="{Binding ProcessorType}" Icon="/Images/Icons/processor.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Display" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Display Resolution" Value="{Binding Resolution}" Icon="/Images/Icons/screenresolution.png" />
+                <Controls:PhoneSpecControl Field="Display Type" Value="{Binding DisplayType}" Icon="/Images/Icons/display.png" />
+                <Controls:PhoneSpecControl Field="Display Size" Value="{Binding DisplaySize}" Icon="/Images/Icons/displaysize.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Rear Camera" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Sensor" Value="{Binding RearCamera}" Icon="/Images/Icons/rearcamera.png" />
+                <Controls:PhoneSpecControl Field="Aperture" Value="{Binding RearAperture}" Icon="/Images/Icons/rearcamera.png" />
+                <Controls:PhoneSpecControl Field="Focal Length" Value="{Binding RearFocalLength}" Icon="/Images/Icons/focallength.png" />
+                <Controls:PhoneSpecControl Field="Min Focus Range" Value="{Binding RearMinFocusRange}" Icon="/Images/Icons/dimensions.png" />
+                <Controls:PhoneSpecControl Field="Flash Type" Value="{Binding FlashType}" Icon="/Images/Icons/flash.png" />
+                <Controls:PhoneSpecControl Field="Flash Operating Range" Value="{Binding FlashOperatingRange}" Icon="/Images/Icons/flash.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Front Camera" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Sensor" Value="{Binding FrontCamera}" Icon="/Images/Icons/frontcamera.png" />
+                <Controls:PhoneSpecControl Field="Resolution" Value="{Binding FrontResolution}" Icon="/Images/Icons/frontcamera.png" />
+                <Controls:PhoneSpecControl Field="Aperture" Value="{Binding FrontAperture}" Icon="/Images/Icons/frontcamera.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Connectivity" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="SIM Card Type" Value="{Binding SimCardType}" Icon="/Images/Icons/sim.png" />
+                <Controls:PhoneSpecControl Field="Charging Connector(s)" Value="{Binding ChargingConnectors}" Icon="/Images/Icons/chargingconnectors.png" />
+                <Controls:PhoneSpecControl Field="AV Connector(s)" Value="{Binding AVConnectors}" Icon="/Images/Icons/avconnectors.png" />
+                <Controls:PhoneSpecControl Field="System Connector(s)" Value="{Binding SystemConnectors}" Icon="/Images/Icons/systemconnectors.png" />
+                <Controls:PhoneSpecControl Field="USB Version" Value="{Binding USBVersion}" Icon="/Images/Icons/usbversion.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Power Management" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Battery Size" Value="{Binding BatterySize}" Icon="/Images/Icons/battery.png" />
+                <Controls:PhoneSpecControl Field="Battery Voltage" Value="{Binding BatteryVoltage}" Icon="/Images/Icons/batteryvoltage.png" />
+                <Controls:PhoneSpecControl Field="Talk Time" Value="{Binding TalkTime}" Icon="/Images/Icons/talktime.png" />
+                <Controls:PhoneSpecControl Field="Standby Time" Value="{Binding StandbyTime}" Icon="/Images/Icons/standby.png" />
+                <Controls:PhoneSpecControl Field="Wifi Time" Value="{Binding MaxWifiTime}" Icon="/Images/Icons/wifi.png" />
+                <Controls:PhoneSpecControl Field="Music Playback" Value="{Binding MaxMusicPlayback}" Icon="/Images/Icons/musicplayback.png" />
+                <Controls:PhoneSpecControl Field="Video Playback" Value="{Binding MaxVideoPlayback}" Icon="/Images/Icons/videoplayback.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Wireless" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="Bluetooth Version" Value="{Binding BluetoothVersion}" Icon="/Images/Icons/bluetooth.png" />
+                <Controls:PhoneSpecControl Field="Bluetooth Profiles" Value="{Binding BluetoothProfiles}" Icon="/Images/Icons/bluetooth.png" />
+                <Controls:PhoneSpecControl Field="WiFi Version" Value="{Binding WiFiVersion}" Icon="/Images/Icons/wifi.png" />
+                <Controls:PhoneSpecControl Field="WiFi Security" Value="{Binding WiFiSecurityModes}" Icon="/Images/Icons/wifiversion.png" />
+                <Controls:PhoneSpecControl Field="WiFi Connectivity" Value="{Binding WirelessConnectivity}" Icon="/Images/Icons/wifiversion.png" />
+                <Controls:PhoneSpecControl Field="NFC" Value="{Binding NFC}" Icon="/Images/Icons/nfc.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="GSM Network" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="GSM Types" Value="{Binding GSMTypes}" Icon="/Images/Icons/gsmtypes.png" />
+                <Controls:PhoneSpecControl Field="GSM Download" Value="{Binding GSMDownload}" Icon="/Images/Icons/gsmdownload.png" />
+                <Controls:PhoneSpecControl Field="GSM Upload" Value="{Binding GSMUpload}" Icon="/Images/Icons/gsmupload.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="LTE Network" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="LTE Types" Value="{Binding LTEypes}" Icon="/Images/Icons/gsmtypes.png" />
+                <Controls:PhoneSpecControl Field="LTE Download" Value="{Binding LTEDownload}" Icon="/Images/Icons/gsmdownload.png" />
+                <Controls:PhoneSpecControl Field="LTE Upload" Value="{Binding LTEUpload}" Icon="/Images/Icons/gsmupload.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="WCDMA Network" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <Controls:PhoneSpecControl Field="WCDMA Types" Value="{Binding WCDMATypes}" Icon="/Images/Icons/gsmtypes.png" />
+                <Controls:PhoneSpecControl Field="WCDMA Download" Value="{Binding WCDMADownload}" Icon="/Images/Icons/gsmdownload.png" />
+                <Controls:PhoneSpecControl Field="WCDMA Upload" Value="{Binding WCDMAUpload}" Icon="/Images/Icons/gsmupload.png" />
+
+                <StackPanel Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock Text="Notes" Style="{StaticResource PhoneTextNormalStyle}" Foreground="{StaticResource PhoneBackgroundBrush}" Margin="12 6" />
+                </StackPanel>
+                <TextBlock Text="{Binding Notes}" Style="{StaticResource PhoneTextNormalStyle}" TextWrapping="Wrap" />
+                
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="applicationBar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized" Opacity="0.85" >
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="report incorrect data" Click="reportInfo_Click" />
+                <shell:ApplicationBarMenuItem Text="send device info to asd" Click="sendInfo_Click" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

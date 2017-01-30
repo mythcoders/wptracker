@@ -1,0 +1,38 @@
+﻿<phone:PhoneApplicationPage xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives" 
+    x:Class="WPTracker.Settings.ToastNotifications"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <TextBlock Text="WPTRACKER" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Text="toast notifications" Style="{StaticResource PhoneTextExtraLargeStyle}"
+                    LineHeight="0" TextWrapping="Wrap" FontFamily="Segoe WP Light" FontSize="48"/>
+
+        <Grid x:Name="ContentPanel" Grid.Row="2">
+            <StackPanel>
+                <Controls:RadToggleSwitch Header="toast notifications"/>
+                <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Margin="12" TextWrapping="Wrap"
+                               Text="When toast notifications are on, you will recieve notifications when the database is updated."/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

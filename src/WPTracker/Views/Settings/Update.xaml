@@ -1,0 +1,45 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WPTracker.Settings.Update"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <ProgressBar x:Name="progressBar1"/>
+            <TextBlock Text="WPTRACKER" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Text="offline data" Style="{StaticResource PhoneTextExtraLargeStyle}"
+                    LineHeight="0" TextWrapping="Wrap" FontFamily="Segoe WP Light" FontSize="48"/>
+
+        <Grid x:Name="ContentPanel" Grid.Row="2">
+            <StackPanel>
+                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12" TextWrapping="Wrap"
+                               Text="Want to still enjoy WPTracker when you don't have an internet or cellular connection? Simply download the WPTracker database for offline use. Don't worry, everytime you are online and fresh copy of the data is saved to your phone."/>
+                <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12" TextWrapping="Wrap"
+                               Text="If you always want to use offline data just make sure 'Always use offline data' is turned on under settings."/>
+                <TextBlock x:Name="offlineDataDateTB" Style="{StaticResource PhoneTextNormalStyle}" Margin="12" TextWrapping="Wrap"
+                               Text="offline data last updated: [date]"/>
+
+                <Button Content="update offline data" Name="updateBtn" Click="button1_Click" HorizontalAlignment="Left"/>
+                <Button Content="delete offline data" Name="deleteBtn" Click="deleteBtn_Click" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

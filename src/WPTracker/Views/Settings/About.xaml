@@ -1,0 +1,113 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WPTracker.Settings.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <ProgressBar x:Name="progressBar1"/>
+            <TextBlock Text="WPTRACKER" Style="{StaticResource PhoneTextSubtleStyle}" />
+        </StackPanel>
+
+        <TextBlock Grid.Row="1" Text="about" Style="{StaticResource PhoneTextExtraLargeStyle}"
+                    LineHeight="0" TextWrapping="Wrap" FontFamily="Segoe WP Light" FontSize="48"/>
+
+        <Grid x:Name="ContentPanel" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <TextBlock 
+                    Text="WP Tracker" 
+                    Margin="12,0,12,0" 
+                    FontSize="{StaticResource PhoneFontSizeLarge}" 
+                    FontFamily="{StaticResource PhoneFontFamilySemiBold}"/>
+                <TextBlock 
+                    Name="VersionNumberTextBox"
+                    Text="Version: 99.99.99.99" 
+                    Margin="12,0,12,0" 
+                    FontSize="{StaticResource PhoneFontSizeNormal}"/>
+            </StackPanel>
+
+            <!--<TextBlock 
+                    Grid.Row="1" 
+                    Text="Data in this application is stored in a Windows Azure SQL Database. This allows data to be added or corrected quickly without the need to update the application."
+                    Margin="12,12,12,12" 
+                    TextWrapping="Wrap" 
+                    Foreground="{StaticResource PhoneSubtleBrush}" 
+                    FontSize="{StaticResource PhoneFontSizeNormal}" />-->
+
+            <Grid Grid.Row="2" Margin="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                        Source="/Images/General/CMYK.png" 
+                        HorizontalAlignment="Left" Stretch="Fill"
+                        Height="100" Width="100" />
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Text="User Interface designed by" 
+                        Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <TextBlock Text="CMYK Software" FontWeight="Bold"
+                        Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <HyperlinkButton Content="http://cmyksoftware.net/"
+                        FontSize="18" Foreground="Blue" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="3" Margin="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                        Source="/Images/Icons/icons8.png" 
+                        HorizontalAlignment="Left" Stretch="Fill"
+                        Height="100" Width="100" />
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" >
+                    <TextBlock Text="Icons provided by" 
+                        Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <TextBlock Text="Icons8" FontWeight="Bold"
+                        Style="{StaticResource PhoneTextNormalStyle}"/>
+                    <HyperlinkButton Content="http://icons8.com/"
+                        FontSize="18" Foreground="Blue" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="4" Margin="12" VerticalAlignment="Bottom">
+                <Image 
+                        Source="/Images/General/CompanyLogo.png" 
+                        Stretch="Fill" 
+                        HorizontalAlignment="Left" />
+                <TextBlock 
+                        Text="© 2014 Adkins Software Development" 
+                        FontSize="16"
+                        Foreground="{StaticResource PhoneSubtleBrush}"
+                        Margin="0 12"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>
