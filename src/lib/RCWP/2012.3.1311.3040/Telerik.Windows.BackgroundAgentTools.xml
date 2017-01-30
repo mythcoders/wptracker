@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.BackgroundAgentTools</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData)">
+            <summary>
+            Updates the tile info.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData,System.Boolean)">
+            <summary>
+            Updates the tile info.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.GetTile(System.Uri)">
+            <summary>
+            Gets the tile.
+            </summary>
+            <param name="tileUri">The tile URI.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateStandardTileData(Telerik.Windows.Controls.RadExtendedTileData,System.Uri)">
+            <summary>
+            Prepares standard tile data from Telerik extended tile data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CleanupUnpinnedTilesResources">
+            <summary>
+            Clean the used resources of tiles that were unpinned from the home screen by the end users.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadExtendedTileData">
+            <summary>
+            Represents the class used for generating the live tiles.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExtendedTileData.VisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background of the front tile.
+            </summary>
+            <remarks>
+            Setting this will override the BackgroundImage property.
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExtendedTileData.BackVisualElement">
+            <summary>
+            Gets or sets the visual element which will be used as a background of the back tile.
+            </summary>
+            <remarks>
+            Setting this will override the BackBackgroundImage property.
+            </remarks>
+        </member>
+        <member name="T:Telerik.Windows.Controls.LiveTileHelperData.TileData">
+            <summary>
+            Used internally.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.TileData.NavigationString">
+            <summary>
+            Gets or sets the navigation string.
+            </summary>
+            <value>The navigation string.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.TileData.FrontBackgroundImagePath">
+            <summary>
+            Gets or sets the front background image path.
+            </summary>
+            <value>The front background image path.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.LiveTileHelperData.TileData.BackBackgroundImagePath">
+            <summary>
+            Gets or sets the back background image path.
+            </summary>
+            <value>The back background image path.</value>
+        </member>
+        <member name="T:Telerik.Configuration.Assemblies.AssemblyInfoHelper">
+            <summary>
+            This class supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.CopyrightMessage">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.AssemblyDescription">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+        <member name="F:Telerik.Configuration.Assemblies.AssemblyInfoHelper.AssemblyProduct">
+            <summary>
+            This field supports the controls infrastructure and is not intended to be used directly from your code.
+            </summary>
+        </member>
+    </members>
+</doc>

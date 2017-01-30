@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7_Tracker.ViewModel.Manufacturer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Pivot Title="VIEW DEVICES BY MANUFACTURER" AllowDrop="False" FlowDirection="LeftToRight">
+
+             <controls:PivotItem Header="htc">
+                <Grid>
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,5,0,0" Name="hubTile7" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/7pro.jpg" Message="htc 7 pro" Tap="hubTile7_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,5,0,0" Name="hubTile8" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/trophy.jpg" Message="htc 7 trophy" Tap="hubTile8_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,185,0,0" Name="hubTile9" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/mozart.jpg" Message="htc 7 mozart" Tap="hubTile9_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,185,0,0" Name="hubTile10" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/hd7.jpg" Message="htc HD7/S" Tap="hubTile10_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,365,0,0" Name="hubTile11" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/titan.jpg" Message="htc TITAN" Tap="hubTile11_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,365,0,0" Message="htc radar" Name="hubTile12" Source="/WP7%20Tracker;component/Images/Phones/radar.jpg" VerticalAlignment="Top" Width="173" Tap="hubTile12_Tap_1" />
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="samsung">
+                <Grid>
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,5,0,0" Name="hubTile1" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/focus.png" Message="samsung focus" Tap="hubTile1_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,5,0,0" Name="hubTile2" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/focus_s.jpg" Message="samsung focus s" Tap="hubTile2_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,185,0,0" Name="hubTile3" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/flash.jpg" Message="samsung focus flash" Tap="hubTile3_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,185,0,0" Name="hubTile4" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/Omnia7.jpg" Message="samsung omnia 7" Tap="hubTile4_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,365,0,0" Name="hubTile5" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/OmniaW.jpg" Message="samsung omnia w" Tap="hubTile5_Tap" />
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="lg">
+                <Grid>
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,5,0,0" Name="hubTile13" VerticalAlignment="Top" Width="173" Message="lg optimus" Source="/WP7%20Tracker;component/Images/Phones/Optimus.jpg" Tap="hubTile13_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,5,0,0" Name="hubTile14" VerticalAlignment="Top" Width="173" Message="lg quantum" Source="/WP7%20Tracker;component/Images/Phones/Quantum.jpg" Tap="hubTile14_Tap" />
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="nokia">
+                <Grid>
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,5,0,0" Name="hubTile16" VerticalAlignment="Top" Width="173" Message="nokia lumia 710" Source="/WP7%20Tracker;component/Images/Phones/lumia710.png" Tap="hubTile16_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,5,0,0" Name="hubTile17" VerticalAlignment="Top" Width="173" Message=" nokia lumia 800" Source="/WP7%20Tracker;component/Images/Phones/lumia800.jpg" Tap="hubTile17_Tap" />
+                    <!--<toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,185,0,0" Name="hubTile20" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/lumia800.jpg" Message="nokia lumia 900" Tap="hubTile20_Tap" />-->
+                </Grid>
+            </controls:PivotItem>
+
+            <controls:PivotItem Header="various">
+                <Grid>
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,5,0,0" Name="hubTile6" VerticalAlignment="Top" Width="173" Source="/WP7%20Tracker;component/Images/Phones/venue%20pro.jpg" Message="dell venue pro" Tap="hubTile6_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,5,0,0" Name="hubTile19" VerticalAlignment="Top" Width="173" Message="zte tania" Source="/WP7%20Tracker;component/Images/Phones/tania.jpg" Tap="hubTile19_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="10,185,0,0" Name="hubTile18" VerticalAlignment="Top" Width="173" Message="acer allegro" Source="/WP7%20Tracker;component/Images/Phones/allegro.png" Tap="hubTile18_Tap" />
+                    <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="190,185,0,0" Name="hubTile15" VerticalAlignment="Top" Width="173" Message="fujitsu toshiba IS12T" Source="/WP7%20Tracker;component/Images/Phones/IS12T.jpg" Tap="hubTile15_Tap" />
+                </Grid>
+            </controls:PivotItem>
+
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

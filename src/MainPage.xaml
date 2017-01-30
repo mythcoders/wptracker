@@ -1,0 +1,84 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7_Tracker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:telerikCore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core" 
+    xmlns:local="clr-namespace:WP7_Tracker"
+    shell:SystemTray.IsVisible="True"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="wp tracker" Margin="0,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" Height="93" Width="465" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" ShowGridLines="False">
+
+            <!-- All Devices -->
+            <toolkit:HubTile Height="173" HorizontalAlignment="Left" Margin="12,12,0,0" Name="hubTile1" VerticalAlignment="Top" Width="173" DisplayNotification="False" GroupTag="1" IsEnabled="True" Message="" Notification="0" Title="" Tap="hubTile1_Tap" IsFrozen="False" HorizontalContentAlignment="Left" FontFamily="Segoe WP Light" Source="/WP7%20Tracker;component/Images/tile-all.png">
+                <telerikPrimitives:RadContextMenu.ContextMenu>
+                    <telerikPrimitives:RadContextMenu IsFadeEnabled="True"
+                                          IsZoomEnabled="False">
+                        <telerikPrimitives:RadContextMenuItem Content="pin to start" 
+                                                  Tapped="RadContextMenuItem_Tapped"/>
+                    </telerikPrimitives:RadContextMenu>
+                </telerikPrimitives:RadContextMenu.ContextMenu>
+            </toolkit:HubTile>
+
+            <!-- Manufacturer -->
+            <toolkit:HubTile DisplayNotification="False" GroupTag="1" Height="173" HorizontalAlignment="Left" IsEnabled="True" Margin="197,12,0,0" Message="" Name="hubTile2" Notification="0" Title="" VerticalAlignment="Top" Width="173" IsFrozen="False" Tap="hubTile2_Tap" HorizontalContentAlignment="Left" FontFamily="Segoe WP Light" Source="/WP7%20Tracker;component/Images/tile-manufacturer.png">
+                <telerikPrimitives:RadContextMenu.ContextMenu>
+                    <telerikPrimitives:RadContextMenu IsFadeEnabled="True"
+                                          IsZoomEnabled="False">
+                        <telerikPrimitives:RadContextMenuItem Content="pin to start" 
+                                                  Tapped="RadContextMenuItem_Tapped_1"/>
+                    </telerikPrimitives:RadContextMenu>
+                </telerikPrimitives:RadContextMenu.ContextMenu>
+            </toolkit:HubTile>
+
+            <!-- Versions -->
+            <toolkit:HubTile DisplayNotification="False" FontFamily="Segoe WP Light" GroupTag="1" Height="173" HorizontalAlignment="Left" HorizontalContentAlignment="Left" IsEnabled="True" IsFrozen="False" Margin="12,197,0,0" Message="" Name="hubTile5" Notification="0" Title="" VerticalAlignment="Top" Width="173" Tap="hubTile5_Tap" Source="/WP7%20Tracker;component/Images/tile-versions.png">
+                <telerikPrimitives:RadContextMenu.ContextMenu>
+                    <telerikPrimitives:RadContextMenu IsFadeEnabled="True"
+                                          IsZoomEnabled="False">
+                        <telerikPrimitives:RadContextMenuItem Content="pin to start" 
+                                                  Tapped="RadContextMenuItem_Tapped_2"/>
+                    </telerikPrimitives:RadContextMenu>
+                </telerikPrimitives:RadContextMenu.ContextMenu>
+            </toolkit:HubTile>
+
+            <!-- Carrier
+            <toolkit:HubTile DisplayNotification="False" GroupTag="1" Height="173" HorizontalAlignment="Left" IsEnabled="True" Margin="185,185,0,0" Message="" Name="hubTile3" Notification="0" Title="" VerticalAlignment="Top" Width="173" IsFrozen="False" Tap="hubTile3_Tap" HorizontalContentAlignment="Left" FontFamily="Segoe WP Light" Source="/WP7%20Tracker;component/Images/tile-carrier.png">
+                <telerikPrimitives:RadContextMenu.ContextMenu>
+                    <telerikPrimitives:RadContextMenu IsFadeEnabled="True"
+                                          IsZoomEnabled="False">
+                        <telerikPrimitives:RadContextMenuItem Content="pin to start" 
+                                                  Tapped="RadContextMenuItem_Tapped_3"/>
+                    </telerikPrimitives:RadContextMenu>
+                </telerikPrimitives:RadContextMenu.ContextMenu>
+            </toolkit:HubTile> -->
+            <!-- Region -->
+            <!--<toolkit:HubTile DisplayNotification="False" GroupTag="1" Height="173" HorizontalAlignment="Left" IsEnabled="False" Margin="5,365,0,0" Message="" Name="hubTile4" Notification="0" Title="" VerticalAlignment="Top" Width="173" IsFrozen="False" HorizontalContentAlignment="Left" FontFamily="Segoe WP Light" Source="/WP7%20Tracker;component/Images/tile-globe.png" />-->
+
+
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

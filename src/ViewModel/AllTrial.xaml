@@ -1,0 +1,62 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7_Tracker.ViewModel.AllTrial"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="VIEW ALL DEVICES" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="MainGrid" Height="5000" Grid.Row="1" Margin="12,0,12,0">
+            <Canvas x:Name="ContentPanel" Height="Auto">
+                <ScrollViewer Height="1300" >
+                    <StackPanel Height ="1860" Width="456">
+                        <Button Content="Acer Allegro" Name="button1" FontSize="20" FontFamily="Segoe WP Light" Click="button1_Click" />
+                        <Button Content="Dell Venue Pro" Name="button2" FontSize="20" FontFamily="Segoe WP Light" Click="button2_Click" />
+                        <Button Content="Fujitsu IS12T" Name="button3" FontSize="20" FontFamily="Segoe WP Light" Click="button3_Click" />
+                        <Button Content="HTC 7 Pro" Name="button4" FontSize="20" FontFamily="Segoe WP Light" Click="button4_Click" />
+                        <Button Content="HTC 7 Trophy" Name="button5" FontSize="20" FontFamily="Segoe WP Light" Click="button5_Click" />
+                        <Button Content="HTC 7 Mozart" Name="button6" FontSize="20" FontFamily="Segoe WP Light" Click="button6_Click" />
+                        <Button Content="HTC HD7"  Name="button7" FontSize="20" FontFamily="Segoe WP Light" Click="button7_Click" />
+                        <Button Content="HTC HD7S" Name="button8" FontSize="20" FontFamily="Segoe WP Light" Click="button8_Click" />
+                        <Button Content="HTC TITAN" Name="button9" FontSize="20" FontFamily="Segoe WP Light" Click="button9_Click" />
+                        <Button Content="HTC Radar" Name="button10" FontSize="20" FontFamily="Segoe WP Light" Click="button10_Click" />
+                        <Button Content="LG Optimus" Name="button11" FontSize="20" FontFamily="Segoe WP Light" Click="button11_Click" />
+                        <Button Content="LG Quantum" Name="button12" FontSize="20" FontFamily="Segoe WP Light" Click="button12_Click" />
+                        <Button Content="Nokia Lumia 710" Name="button13" FontSize="20" FontFamily="Segoe WP Light" Click="button13_Click" />
+                        <Button Content="Nokia Lumia 800" Name="button14" FontSize="20" FontFamily="Segoe WP Light" Click="button14_Click" />
+                        <Button Content="Samsung Focus"  Name="button15" FontSize="20" FontFamily="Segoe WP Light" Click="button15_Click" />
+                        <Button Content="Samsung Focus S" Name="button16" FontSize="20" FontFamily="Segoe WP Light" Click="button16_Click" />
+                        <Button Content="Samsung Focus Flash" Name="button17" FontSize="20" FontFamily="Segoe WP Light" Click="button17_Click" />
+                        <Button Content="Samsung Omnia 7" Name="button18" FontSize="20" FontFamily="Segoe WP Light" Click="button18_Click" />
+                        <Button Content="Samsung Omnia W" Name="button19" FontSize="20" FontFamily="Segoe WP Light" Click="button19_Click" />
+                        <Button Content="ZTE Tania" Name="button20" FontSize="20" FontFamily="Segoe WP Light" Click="button20_Click" />
+                        <!-- <Button Content="Nokia Lumia 900" FontFamily="Segoe WP Light" FontSize="20" Name="button21"  Click="button21_Click"/>
+                        <Button Content="HTC TITAN II" FontFamily="Segoe WP Light" FontSize="20" Name="button22"  Click="button22_Click"/>  -->
+                    </StackPanel>
+                </ScrollViewer>
+            </Canvas>
+        </Grid>
+    </Grid>
+
+
+</phone:PhoneApplicationPage>
