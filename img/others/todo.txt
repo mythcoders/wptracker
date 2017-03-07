@@ -1,0 +1,58 @@
+Info
+Updated December 10, 2011 at 8:00pm
+
+General
+- design/  - Source
+- xaml/    - Vector Canvas
+- light/   - Black Icons
+- dark/    - White Icons
+
+How to get an icon added: Mention @Templarian on Twitter,
+wait a few hours for a screenshot of new icon. At this
+time it should have already been included in the zip.
+Or create it and tweet the .design source 48x48 only.
+
+Icons
+- Remote
+- Notepad
+  - Open
+- Emoticons
+  - Smile
+  - Sad
+- Shapes (place mini circles / squares on points)
+  - Rectangle
+  - Square
+- Numbers?
+- Image
+- Painting
+- Wrench
+- Companion Cube
+- Light Bulb
+- Sand Timer
+- Hard Drive
+- Compass
+- Inbox
+- Bacon (mmm... bacon)
+- Link
+- USB
+- File cabinet
+- Bug
+- Thumbs Up
+- Thumbs Down
+- Pill
+- Mail Open
+- Power Plug
+- Headphones
+- Calculator
+- Web Camera
+- Key
+- Anolog Clock
+- Hammer
+- Magnet
+- Planet / World
+- Printer
+- Visa / MasterCard / American Express
+- ID / Badge
+- Ticket
+
+
